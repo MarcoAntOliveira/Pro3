@@ -8,13 +8,17 @@ class Regis_t
   
   public:
       Regis_t();
-      Regis_t(int i,int k);
+      Regis_t(int i,int t);
+      Regis_t(int i, int j, int k, int t);
       //~regis_t();
       void on();
       void off();
       
       void set_regis_t0(int i);
       void set_regis_t1(int i);
+      
+     void set_regis_t1_t(int i, int j, int k);
+     void set_regis_t0_t(int i, int j, int k);
       
       int conv_t();
       void print_binary();
@@ -42,11 +46,31 @@ void Regis_t::set_regis_t0(int i){
     std::cout<< cont_d[i] << " -> " << i <<"\n\n";
 }
 
+void Regis_t::set_regis_t0_t(int i, int j, int k){
+    cont_d[i] = 0;
+    cont_d[j] = 0;
+    cont_d[k] = 0;
+    
+    std::cout<< cont_d[i] << " -> " << i <<"\n\n";
+    std::cout<< cont_d[j] << " -> " << j <<"\n\n";
+    std::cout<< cont_d[k] << " -> " << k <<"\n\n";
+}
+
 //aqui tá printando uns 1 não se assuste
 void Regis_t::set_regis_t1(int i){
     cont_d[i] = 1;
     std::cout<< cont_d[i] << " -> "<< i <<"\n\n"; 
     
+}
+
+void Regis_t::set_regis_t1_t(int i, int j, int k){
+    cont_d[i] = 1;
+    cont_d[j] = 1;
+    cont_d[k] = 1;
+    
+    std::cout<< cont_d[i] << " -> " << i <<"\n\n"; 
+    std::cout<< cont_d[j] << " -> " << j <<"\n\n";
+    std::cout<< cont_d[k] << " -> " << k <<"\n\n";
 }
 
 int Regis_t::conv_t(){
@@ -71,13 +95,22 @@ void Regis_t::print_binary(){
     std :: cout <<"\n";
 }
 
-Regis_t::Regis_t(int i, int k){
+Regis_t::Regis_t(int i, int t){
     on();
     
-    if (k == 1){
+    if (t == 1){
         set_regis_t1( i );
-    } else if(k == 0){
+    } else if(t == 0){
         set_regis_t0( i );
+    } 
+    
+}
+Regis_t::Regis_t(int i,int j, int k, int t){
+    
+    if (t == 1){
+        set_regis_t1_t( i, j, k );
+    } else if(t  == 0){
+        set_regis_t0_t( i, j, k );
     } 
     
 }
@@ -90,9 +123,14 @@ int main()
     std::cout << ard.conv_t()<<"\n";
     
    
-    Regis_t wall(7, 1);
-     wall.set_regis_t1(5);
-     wall.set_regis_t0(6);
+    Regis_t wall(7, 6, 1, 1);
+    std::cout << wall.conv_t()<<"\n";
+    
+    Regis_t fahr(5 , 4, 3, 1);
+  
+    std::cout <<fahr.conv_t()<<"\n";
+    
+    
     
     
 
