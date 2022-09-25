@@ -30,7 +30,7 @@ class regis_t {
 }
 
 void regis_t::off(){
-    cont_d[0] = 0;
+    cont_d[8] = 0;
     std::cout <<"registrador desligado !!"<<"\n";
 }
 
