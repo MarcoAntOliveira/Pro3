@@ -1,34 +1,48 @@
-//************************************************************
- // Definition of member function simplify. This method       *
- // checks for values in the inches member greater than       *
- // twelve or less than zero. If such a value is found,       *
- // the numbers in feet and inches are adjusted to conform    *
- // to a standard feet & inches expression. For example,      *
- // 3 feet 14 inches would be adjusted to 4 feet 2 inches and *
- // 5 feet -2 inches would be adjusted to 4 feet 10 inches.   *
- //************************************************************
- #include <iostream>
- #include "feetinches1.h"
+include <iostream>
+ #include <include/FeetInches.h>
  
  void FeetInches::simplify() {
-    if (inches == 14){
-        feet = feet + 1;  
+    int i {0};
+    int f {0};
+
+    if (i == 14){
+        f = f + 1;  
     }
-    else if (inches < -1)
+    else if (i < -1)
     {
-        feet = feet - 1;
+        f = f - 1;
     }
  }
- // Overloaded +
+ // Overloaded feet+
  
- FeetInches operator + (const FeetInches &){
+ FeetInches FeetInches::operator+(const FeetInches &f){
      
-     return feet +
+     return f + f.feet;
  } 
- // Overloaded -
- FeetInches operator - (const FeetInches &) {
+ // Overloaded feet-
+
+ FeetInches operator-(const FeetInches &f) {
+
+    return f - f.feet
      
  }
 
+
+ // Overloaded inches +
+ 
+ FeetInches FeetInches::operator+(const FeetInches &i){
+     
+     return i + i.feet;
+ } 
+ // Overloaded inches -
+ FeetInches operator-(const FeetInches &i) {
+
+    return i - i.feet
+     
+ }
+
+
  
  
+ 
+
