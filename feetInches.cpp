@@ -23,7 +23,7 @@ include <iostream>
 
  FeetInches operator-(const FeetInches &f) {
 
-    return f - f.feet
+    return f - f.feet;
      
  }
 
@@ -32,12 +32,12 @@ include <iostream>
  
  FeetInches FeetInches::operator+(const FeetInches &i){
      
-     return i + i.feet;
+     return i + i.inches;
  } 
  // Overloaded inches -
  FeetInches operator-(const FeetInches &i) {
 
-    return i - i.feet
+    return i - i.inches;
      
  }
 
