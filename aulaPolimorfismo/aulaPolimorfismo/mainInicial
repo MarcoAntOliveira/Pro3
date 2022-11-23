@@ -1,0 +1,69 @@
+//Parte 1- Considere a classe mamifero e faça o que se pede:
+
+Mamifero {
+public :
+void emitirSom ( ) { cout << "\n som de mamifero " ; } ;
+} ;
+
+Crie classes cachorro, vaca, bode e gato que sejam herdeiras
+de mamifero e implemente nessas classes
+a a mesma função da classe pai -  emitirSom ( )  
+Cachorro : void emitirSom ( ) { cout << "\n som de mamifero " ; } ;
+Vaca: void emitirSom ( ) { cout << "\n moo moo " ; } ;
+Bode: void emitirSom ( ) { cout << "\n baa baa " ; } ;
+Gato: void emitirSom ( ) { cout << "\n meow meow " ; } ;
+
+//Rode a seguinte main e observe o que é impresso em tela:
+
+int main ( ) {
+Cachorro cachorro ;
+Vaca vaca ;
+Bode bode ;
+Gato gato ;
+cachorro.emitirSom ( ) ;
+vaca.emitirSom ( ) ;
+bode.emitirSom ( ) ;
+gato.emitirSom ( ) ;
+return 0;
+}
+
+// Que som foi impresso? Como você resolveria esse problema com o
+// que foi discutido em aulas anteriores?
+
+// Resposta -  mamifero.cpp
+
+//------- Parte 2------------
+
+int main ( ) {
+Mamifero* p [ 5 ] = {
+new Cachorro( ) ,
+new Vaca( ) ,
+new Bode( ) ,
+new Gato( ) } ; 
+
+for ( int  i= 0 ; i < 4 ; i ++)
+{
+p[ i ]->emitirSom( ) ;
+}
+
+return 0;
+}
+
+//  Use este main no exemplo inicial e responda ao que se pede:
+// 1- O que é impresso em tela e por quê? 
+// Dica: atente que ao fato que se tem um array de ponteiros para mamifero, como e por quê podemos
+// apontar este ponteiro para Cachorro, Vaca, Bode ou Gato? O que ocorre nesse processo?
+// Resposta -  mamifero1.cpp
+
+// 2-  Crie um ponteiro para cachorro, aponte esse ponteiro para mamifero e use para imprimir o som de mamifero.
+// O que ocorre? 
+// Resposta -  mamifero2.cpp
+
+// 3- Como modificar o programa inicial para que seja impresso o som real dos animais desejados?
+// Resposta -  mamiferoPoli.cpp
+
+// 4- Modifique o programa para nao usar new, apenas endereçamento indireto (&) - repita o que se pediu nos itens 1 
+//e 2
+// Resposta -  mamiferoInd.cpp
+
+//Faca o que se pede no arquivo 121_Inicial.cpp
